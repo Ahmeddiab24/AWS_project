@@ -1,13 +1,3 @@
-terraform {
-  required_version = "~> 1.14"
-
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = "~> 5.0"
-    }
-  }
-}
 resource "aws_vpc" "main" {
   cidr_block = "192.168.0.0/16"
   tags = {
@@ -60,7 +50,7 @@ resource "aws_eip" "nat1" {
 }
 resource "aws_nat_gateway" "natgw1" {
   allocation_id = aws_eip.nat1.id
-  subnet_id     = aws_subnet.subnet3.id
+  subnet_id     = aws_subnet.subnet4.id
     tags = {
         Name = "nat_gateway"
     }
