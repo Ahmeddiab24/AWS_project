@@ -2,7 +2,7 @@ resource "aws_alb" "app_lb" {
   name               = "app-lb"
   internal           = false # to be accessible from the internet not from inside vpc 
   load_balancer_type = "application"
-  subnets            = [aws_subnet.subnet1.id, aws_subnet.subnet2.id]
+  subnets            = [aws_subnet.subnet3.id, aws_subnet.subnet4.id]
   security_groups   = [aws_security_group.alb_sg.id]
 
   tags = {
